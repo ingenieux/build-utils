@@ -1,5 +1,6 @@
 package org.modafocas.mojo;
 
+import io.openpixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -22,7 +23,7 @@ public class RunMojo extends StartMojo {
 		System.in));
 
 	try {
-	    reader.readLine();
+	    BoundedLineReader.readLine(reader, 1000000);
 	} catch (IOException e) {
 
 	} finally {
