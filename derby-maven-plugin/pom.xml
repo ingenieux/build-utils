@@ -47,9 +47,23 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-	</dependencies>
+  <dependency>
+   <groupId>io.openpixee</groupId>
+   <artifactId>java-security-toolkit</artifactId>
+  </dependency>
+ </dependencies>
 
 	<properties>
 		<derbyVersion>10.6.2.1</derbyVersion>
-	</properties>
+  <versions.java-security-toolkit>1.0.0</versions.java-security-toolkit>
+ </properties>
+ <dependencyManagement>
+  <dependencies>
+   <dependency>
+    <groupId>io.openpixee</groupId>
+    <artifactId>java-security-toolkit</artifactId>
+    <version>${versions.java-security-toolkit}</version>
+   </dependency>
+  </dependencies>
+ </dependencyManagement>
 </project>
