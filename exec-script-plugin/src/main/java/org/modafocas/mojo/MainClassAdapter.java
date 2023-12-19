@@ -39,20 +39,28 @@ public class MainClassAdapter {
 	    MethodNode method = (MethodNode) o;
 
 	    if (!"main".equals(method.name))
-		continue;
+		{
+		    continue;
+		}
 
 	    flags = Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC;
 
 	    if (flags != (method.access & flags))
-		continue;
+		{
+		    continue;
+		}
 
 	    if (0 != (method.access & Opcodes.ACC_ABSTRACT))
-		continue;
+		{
+		    continue;
+		}
 
 	    Type returnType = Type.getReturnType(method.desc);
 
 	    if (!(returnType == Type.INT_TYPE || returnType == Type.VOID_TYPE))
-		continue;
+		{
+		    continue;
+		}
 
 	    foundMethod = method;
 	}
